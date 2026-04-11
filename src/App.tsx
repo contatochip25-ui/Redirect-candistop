@@ -25,6 +25,11 @@ export default function App() {
         <div className="w-full flex flex-col items-center gap-4 pt-4">
           <a 
             href="https://wa.me/556282468641?text=Olá%2C%20como%20faço%20para%20receber?" 
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).fbq) {
+                (window as any).fbq('track', 'Lead');
+              }
+            }}
             className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-pink-600 hover:bg-pink-700 text-white text-lg font-semibold rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgb(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
           >
             <span>QUERO RECEBER E PAGAR DEPOIS</span>
